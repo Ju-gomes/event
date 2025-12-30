@@ -1,4 +1,4 @@
-package com.event.demo.models.event;
+package com.event.demo.domain.event;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

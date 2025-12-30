@@ -1,6 +1,6 @@
-package com.event.demo.models.coupon;
+package com.event.demo.domain.coupon;
 
-import com.event.demo.models.event.Event;
+import com.event.demo.domain.event.Event;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
