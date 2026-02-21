@@ -1,0 +1,55 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:eventos
+    username: admin
+    password: admin
+    driverClassName: org.h2.Driver
+
+  h2:
+    console:
+      enabled: true                  # habilita o console web
+      path: /h2-console              # URL: http://localhost:8080/h2-console
+
+#  jpa:
+#    show-sql: true
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    open-in-view: false
+#    hibernate:
+#      ddl-auto: ${JPA_HIBERNATE_DDL_AUTO:update}
+
+jpa:
+  hibernate:
+    ddl-auto: update               # create, create-drop, update, validate, none
+  show-sql: true                   # mostra os comandos SQL no console (opcional)
+  properties:
+    hibernate:
+      format_sql: true
+      dialect: org.hibernate.dialect.H2Dialect
+
+logging:
+  level:
+    '[org.springframework.web]': debug
+
+app:
+  version: @project.version@
+  name: @project.name@
+  description: @project.description@
+
+# swagger
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    disable-swagger-default-url: true
+    path: /swagger
+    enabled: true
+    operationsSorter: method
+    tagsSorter: alpha
+  show-actuator: true
+
+server:
+  port: ${SERVER_PORT:8081}
+  servlet:
+    context-path: ${SERVER_CONTEXT_PATH:/eventos}
+  tomcat:
+    connection-timeout: ${CONNECTION_TIMEOUT:30m}
